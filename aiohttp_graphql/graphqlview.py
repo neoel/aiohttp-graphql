@@ -192,7 +192,7 @@ class GraphQLView: # pylint: disable = too-many-instance-attributes
                 status=200,
                 headers={
                     'Access-Control-Allow-Origin': origin,
-                    'Access-Control-Allow-Headers': '*',
+                    'Access-Control-Allow-Headers': 'Content-Type',
                     'Access-Control-Allow-Methods': ', '.join(accepted_methods),
                     'Access-Control-Max-Age': str(self.max_age),
                 }
