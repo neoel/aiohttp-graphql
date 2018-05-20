@@ -157,10 +157,17 @@ class GraphQLView: # pylint: disable = too-many-instance-attributes
                     result=result,
                 )
 
+            
+            headers = request.headers
+            origin = headers.get('Origin', '')
+            
             return web.Response(
                 text=result,
                 status=status_code,
                 content_type='application/json',
+                headers={
+                    'Access-Control-Allow-Origin': origin
+                }
             )
 
         except HttpQueryError as err:
